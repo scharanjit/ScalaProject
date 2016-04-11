@@ -1,5 +1,4 @@
 package com.imaginea.test
-import scala.util.Try;
 
 object TowersOfHanoi {
   
