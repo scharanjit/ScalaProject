@@ -6,6 +6,10 @@ import util.control.Breaks._
 case class NegativeNotAllowed(message: String) extends Exception(message)
 
 object StackTowersOFHanoi {
+  /*
+   * This is the main method of Object
+   * 
+   * */
   def main(args: Array[String]): Unit = {
     println("In Main")
     var stepNum = 0
@@ -44,21 +48,16 @@ object StackTowersOFHanoi {
         
 
         if ( status == 1) {
-         stepNum=stepNum+1
-         
-          println("Disk moved from Source Tower to Destination Tower ")
+          println(" moved from Source Tower to Destination Tower ")
         } else if(status ==2){
          stepNum=stepNum+1
-          println("Disk moved from Destination Tower to Source Tower ")
+          println(" moved from Destination Tower to Source Tower ")
         }
-        
         status = checkMove(sourceStack, pivotStack)
         if ( status == 1) {
-     stepNum=stepNum+1
-          println("Disk  moved from Source Tower to Pivot Tower ")
+          println(" moved from Source Tower to Pivot Tower ")
         } else if(status ==2){
-         stepNum=stepNum+1
-          println("Disk  moved from Pivot Tower to Source Tower ")
+          println(" moved from Pivot Tower to Source Tower ")
         }else{
          return
         }
@@ -68,21 +67,15 @@ object StackTowersOFHanoi {
         //source to destination & reverse
         status = checkMove(sourceStack, pivotStack)
         if ( status == 1) {
-          stepNum=stepNum+1
-          println("Disk  moved from Source Tower to Pivot Tower ")
+          println("  moved from Source Tower to Pivot Tower ")
         } else if(status ==2){
-           stepNum=stepNum+1
-          println("Disk moved from Pivot Tower to Source Tower ")
+          println(" moved from Pivot Tower to Source Tower ")
         }
-        
-      
         status = checkMove(sourceStack, destinationStack)
         if ( status == 1) {
-          stepNum=stepNum+1
-          println("Disk moved from Source Tower to Destination Tower ")
+          println(" moved from Source Tower to Destination Tower ")
         } else if(status ==2){
-          stepNum=stepNum+1
-          println("Disk moved from Destination Tower to Source Tower ")
+          println(" moved from Destination Tower to Source Tower ")
         }
 
       }
@@ -90,11 +83,9 @@ object StackTowersOFHanoi {
       
       status = checkMove(pivotStack, destinationStack)
         if ( status == 1) {
-           stepNum=stepNum+1
-          println("Disk  moved from Pivot Tower to Destination Tower ")
+          println("  moved from Pivot Tower to Destination Tower ")
         } else if(status == 2){
-           stepNum=stepNum+1
-          println("Disk  moved from Destination Tower to Pivot Tower ")
+          println("  moved from Destination Tower to Pivot Tower ")
         }
 
     } while (destinationStack.size != v)
@@ -117,14 +108,12 @@ object StackTowersOFHanoi {
       i = srcStack.top.toInt
     } catch {
       case e: Exception =>
-//        println("Empty Stack")
         i = 0 //stack is empty
     }
     try {
       j = destStack.top.toInt
     } catch {
       case e: Exception =>
-//        println("Empty Stack")
         j = 0 //stack is empty
     }
     if (i == j) return 0 //both towers are empty
@@ -132,18 +121,22 @@ object StackTowersOFHanoi {
     // if either of tower src and dest are empty
 
     if (i == 0) { //if tower A is empty ,pop from B push disk onto A
+      print("Disk "+destStack.top+" ")
       srcStack.push(destStack.pop())
       return 2
     } else if (j == 0) { //if tower B is empty, pop from A push disk onto B
+        print("Disk "+srcStack.top+" ")
       destStack.push(srcStack.pop())
       return 1
     }
 
     //checking weight & move
     if (i < j) {
+      print("Disk "+srcStack.top+" ")
       destStack.push(srcStack.pop()) // move occurs from tower A to B i.e. source to destination
       return 1
     } else if (i > j) {
+      print("Disk "+destStack.top+" ")
       srcStack.push(destStack.pop()) //move occurs from tower B to A i.e. destination to source
       return 2  
     }
