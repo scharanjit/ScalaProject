@@ -2,6 +2,7 @@ package com.imaginea.test
 import scala.collection.mutable.Stack
 import java.util.NoSuchElementException
 
+
 case class NegativeNotAllowed(message: String) extends Exception(message)
 
 object StackTowersOFHanoi {
