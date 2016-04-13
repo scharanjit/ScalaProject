@@ -7,7 +7,8 @@ case class NegativeNotAllowed(message: String) extends Exception(message)
 object StackTowersOFHanoi {
   /*
    * This is the main method of Object
-   * 
+   * 1. )This is validating 0, minus & non integer input
+   * Also it is giving information about disk movement
    * */
   def main(args: Array[String]): Unit = {
     var status = 0
@@ -86,8 +87,18 @@ object StackTowersOFHanoi {
   /*
    * This method will move one disk from One tower to another
    * depending upon different scenarios
-   * 1.) check emptiness
-   * 2.) checking weight or disk size
+   *  checking below constraints
+   *
+   * 1. Only one disk can be moved at a time.
+   * 
+   * 2. Each move consists of taking the upper disk from one of the stacks 
+   * and placing it on top of another stack i.e. a disk can only be moved 
+   * if it is the uppermost disk on a stack.
+   * 
+   * 3. A bigger disc can not be placed on top of a smaller disk.
+   * 
+   * 
+   * 
    * */
 
   def checkMove(srcStack: Stack[Int], destStack: Stack[Int]): Int = {
