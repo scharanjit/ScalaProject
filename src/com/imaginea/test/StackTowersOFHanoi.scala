@@ -33,15 +33,12 @@ object StackTowersOFHanoi {
 
     var k = totalDisks % 2
     var x=0;
-    println(sourceStack+"--- "+k)
     do {
       //if odd disk 
       //first move to source to dest & reverse
       //& den source to aux & reverse
       if (k == 1) {
-        status = checkMove(sourceStack, destinationStack)
-        
-
+        status = checkMove(sourceStack, destinationStack)  
         if ( status == 1) {
           println(" moved from Source Tower to Destination Tower ")
         } else if(status ==2){
