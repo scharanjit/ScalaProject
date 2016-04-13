@@ -1,7 +1,6 @@
 package com.imaginea.test
 import scala.collection.mutable.Stack
 import java.util.NoSuchElementException
-import util.control.Breaks._
 
 case class NegativeNotAllowed(message: String) extends Exception(message)
 
@@ -11,32 +10,28 @@ object StackTowersOFHanoi {
    * 
    * */
   def main(args: Array[String]): Unit = {
-    println("In Main")
-    var stepNum = 0
-    
     var status = 0
     
-    var v = 0;
+    var totalDisks = 0;
     val sourceStack: Stack[Int] = new Stack
     val pivotStack: Stack[Int] = new Stack
     val destinationStack: Stack[Int] = new Stack
 
-    println("Enter the number of disks")
+    println("Enter the number of disks : ")
     try {
-      v = scala.io.StdIn.readLine().toInt;
-      if (v <= 0) throw NegativeNotAllowed("Zero or Negative Numbers not allowed")
-
+      totalDisks = scala.io.StdIn.readLine().toInt;
+      if (totalDisks <= 0) throw NegativeNotAllowed("Zero or Negative Numbers not allowed")
     } catch {
       case e: Exception => println("Invalid data !! exception caught: " + e);
     }
 
     var i = 0
 
-    for (i <- (1 to v).reverse) {
+    for (i <- (1 to totalDisks).reverse) {
       sourceStack.push(i)
     }
 
-    var k = v % 2
+    var k = totalDisks % 2
     var x=0;
     println(sourceStack+"--- "+k)
     do {
@@ -50,7 +45,6 @@ object StackTowersOFHanoi {
         if ( status == 1) {
           println(" moved from Source Tower to Destination Tower ")
         } else if(status ==2){
-         stepNum=stepNum+1
           println(" moved from Destination Tower to Source Tower ")
         }
         status = checkMove(sourceStack, pivotStack)
@@ -88,7 +82,7 @@ object StackTowersOFHanoi {
           println("  moved from Destination Tower to Pivot Tower ")
         }
 
-    } while (destinationStack.size != v)
+    } while (destinationStack.size != totalDisks)
 
   }
 
