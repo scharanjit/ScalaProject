@@ -36,7 +36,7 @@ object exercise {
                                                   //> sqrt: (x: Double)Double
   def averageDamp(f: Double => Double)(x: Double) = (x + f(x)) / 2
                                                   //> averageDamp: (f: Double => Double)(x: Double)Double
-
+// a function that takes another function and it returns another function
   def sqrt1(x: Double) = fixedpoint(averageDamp(y => x / y))(1)
                                                   //> sqrt1: (x: Double)Double
 
