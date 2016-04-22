@@ -2,7 +2,7 @@ package week3
 
 object RationalAdsAdvance {
  
-
+ 	 
   val x = new RationalAd(1, 3)                    //> x  : week3.RationalAd = 1/3
   val y = new RationalAd(5, 7)                    //> y  : week3.RationalAd = 5/7
   val z = new RationalAd(3, 2)                    //> z  : week3.RationalAd = 3/2
@@ -29,6 +29,9 @@ object RationalAdsAdvance {
 class RationalAd(x: Int, y: Int) {
 	private  def gcd(a:Int,b:Int):Int=if (b==0) a else gcd(b ,a%b)
 	private val g=gcd(x,y)
+	def < (that:RationalAd) =numer * that.denom< that.numer * denom
+	
+	def max(that:RationalAd)=if(this<that) that else this
 	
 	
   def numer = x/g
