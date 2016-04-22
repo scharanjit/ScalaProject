@@ -25,6 +25,15 @@ object RationalAdsAdvance {
   x.sub(y).sub(z)                                 //> res5: week3.RationalAd = -79/42
   
   y.add(y)                                        //> res6: week3.RationalAd = 10/7
+  
+  //infix notation
+  x < y                                           //> res7: Boolean = true
+
+ x max y                                          //> res8: week3.RationalAd = 5/7
+
+y max x                                           //> res9: week3.RationalAd = 5/7
+    
+
 }
 class RationalAd(x: Int, y: Int) {
 	private  def gcd(a:Int,b:Int):Int=if (b==0) a else gcd(b ,a%b)
