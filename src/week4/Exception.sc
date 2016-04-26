@@ -17,10 +17,7 @@ object Exception {
                                                   //| 	at week4.Exception$.main(week4.Exception.scala:3)
                                                   //| 	at week4.Exception.main(week4.Exception.scala)
 	
-	val x=null
-	//val z:Int=null
-
-	val z:Null=null
+	
 
 
 }
