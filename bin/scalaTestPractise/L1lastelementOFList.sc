@@ -6,6 +6,7 @@ object L1lastelementOFList {
   def lastBuiltin[A](ls: List[A]): A = ls.last    //> lastBuiltin: [A](ls: List[A])A
 
 //using
+// case pattern=>  expression
   def lastRecursive[A](ls: List[A]): A = ls match {
     case h :: Nil  => h
     case _ :: tail => lastRecursive(tail)

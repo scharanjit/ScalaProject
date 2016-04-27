@@ -6,6 +6,10 @@ object L9DuplicateEleINSUbliSt {
    
    
    def pack[A](ls :List[A]):List[List[A]]={
-   }
+   if (ls.isEmpty) List(List())
+   else {
    
+   }
+   }
+   	
 }
