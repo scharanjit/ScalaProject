@@ -1,5 +1,11 @@
 package scalaTestPractise
 
 object L9DuplicateEleINSUbliSt {
-  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
+  
+   val ls = List('a', 'a', 'a', 'b', 'b', 'c', 'd', 'd','a')
+   
+   
+   def pack[A](ls :List[A]):List[List[A]]={
+   }
+   
 }
