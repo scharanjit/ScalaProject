@@ -16,4 +16,6 @@ object M1Encode {
                                                   //> ls  : List[Char] = List(a, a, a, b, b, c, d, d, a)
   
    encodde(ls)                                    //> res0: List[(Int, Char)] = List((3,a), (2,b), (1,c), (2,d), (1,a))
+   
+   
 }
