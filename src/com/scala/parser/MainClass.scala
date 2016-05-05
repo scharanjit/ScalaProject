@@ -5,6 +5,7 @@ import java.net.URL
 import java.io.File
 import scala.io.Source
 
+
 object MainClass {
    val hrefRegex = """\<a.*?href=\"2014(.*?)\".*?\>.*?\</a>""".r
   val hrefRegex1 = """\<a.*?href=\"(.*?)\".*?\>.*?\</a>""".r
