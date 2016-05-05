@@ -5,12 +5,10 @@ import java.net.URL
 import java.io.File
 import scala.io.Source
 
-
 object MainClass {
-   val hrefRegex = """\<a.*?href=\"2014(.*?)\".*?\>.*?\</a>""".r
+  val hrefRegex = """\<a.*?href=\"2014(.*?)\".*?\>.*?\</a>""".r
   val hrefRegex1 = """\<a.*?href=\"(.*?)\".*?\>.*?\</a>""".r
-  
-  
+
   def main(args: Array[String]): Unit = {
     //source Url
     val sourceUrl = "http://mail-archives.apache.org/mod_mbox/maven-users/"
@@ -22,9 +20,6 @@ object MainClass {
     println("----Download Finished ----...")
   }
 
-  
-  
-
   /*
    * This method will parse over the available links*/
   def parse(sourceUrl: String, source: Source): List[Link] = {
@@ -35,7 +30,6 @@ object MainClass {
     populate(hrefRegex.findAllIn(source.mkString).toList, links, sourceUrl)
 
   }
-
 
   /*
    * This method iterates over listOfMatches populate the Link
